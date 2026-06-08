@@ -17,8 +17,10 @@ curl -fsSL https://claude.ai/install.sh | bash
 mkdir -p ${HOME}/workspace/headroom-ai-proxy
 cd ${HOME}/workspace/headroom-ai-proxy
 uv python install 3.13
-#uv python pin 3.13
 uv sync
+
+# LiteLLM Vulnerability Response
+uv pip install --upgrade --no-deps "litellm>=1.83.7"
 
 # Start
 ./start.sh
